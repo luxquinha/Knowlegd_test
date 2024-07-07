@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import MainHeader from "./components/MainHeader"
 import Modal from "./components/Modal"
 import NewPost from "./components/NewPost"
@@ -13,8 +13,15 @@ function App() {
   }
 
   const submitDataHandler = (newPost) =>{
-    setPosts(posts => [newPost, ...posts])
+    const newPosts = [newPost, ...posts]
+    setPosts(newPosts)
+    localStorage.setItem('posts', JSON.stringify(newPosts))
   }
+
+  useEffect(() => {
+    const posts = JSON.parse(localStorage.getItem('posts'))
+    if(posts) setPosts(posts)
+  }, [])
 
   return (
     <div className="w-screen h-screen bg-zinc-700 mx-auto">
