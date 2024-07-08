@@ -25,9 +25,17 @@ export const action = async ({ request }) =>{
   const posts = JSON.parse(localStorage.getItem('posts')) || []
   const formData = await request.formData()
   let postData = Object.fromEntries(formData)
-  postData = { ...postData, id: posts.length + 1 }
+  postData = { ...postData, id: posts.length + 1, ...dataAtualFormatada() }
   const newPosts = [ postData, ...posts]
   localStorage.setItem('posts', JSON.stringify(newPosts))
 
   return redirect('/')
+}
+
+function dataAtualFormatada(){
+  let date = new Date().toLocaleString('pt-BR').split(',')[0] 
+  let hour = new Date().toLocaleString('pt-BR').split(',')[1]
+  hour = hour.trim().split(':')
+
+  return { date: date, hour: `${hour[0]}:${hour[1]}`}
 }
