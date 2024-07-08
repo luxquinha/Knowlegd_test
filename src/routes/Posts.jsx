@@ -1,3 +1,4 @@
+import { useState } from "react"
 import PostList from "../components/PostList"
 import { Outlet, useLoaderData } from "react-router-dom"
 

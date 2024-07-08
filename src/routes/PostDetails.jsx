@@ -1,6 +1,7 @@
 import React from 'react'
 import Modal from '../components/Modal'
-import { useLoaderData } from 'react-router-dom'
+import { X } from 'lucide-react'
+import { Link, useLoaderData } from 'react-router-dom'
 
 const PostDetails = () => {
   const post = useLoaderData()
@@ -14,6 +15,7 @@ const PostDetails = () => {
           <p>{post.hour}</p>
           <p>{post.date}</p>
         </div>
+        <Link to={'..'} className='absolute top-3 right-3 text-zinc-700 hover:text-zinc-700'><X size={22}/></Link>
       </div>
     </Modal>
   )

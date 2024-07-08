@@ -1,6 +1,7 @@
 import React from 'react'
 import Modal from '../components/Modal'
 import { Link, Form, redirect } from 'react-router-dom'
+import { X } from 'lucide-react'
 
 const NewPost = () => {
   return (
@@ -14,6 +15,7 @@ const NewPost = () => {
           <Link to={'/'} className='text-white bg-zinc-500 w-24 h-8 rounded-md flex items-center justify-center border-none active:outline-none'>Cancel</Link>
           <button className='text-white bg-green-600 w-24 h-8 rounded-md flex items-center justify-center active:outline-none border-none'>Submit</button>
         </div>
+        <Link to={'..'} className='absolute top-3 right-3 text-zinc-700 hover:text-zinc-700'><X size={22}/></Link>
       </Form>
     </Modal>
   )

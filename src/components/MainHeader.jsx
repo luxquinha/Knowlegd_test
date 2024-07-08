@@ -11,7 +11,7 @@ const MainHeader = () => {
           <h1 className='text-5xl font-bold tracking-widest'>React refreshing</h1>
         </li>
         <li className='flex items-center justify-center'>
-          <Link to={'create-post'} className='w-28 h-8 bg-zinc-300 text-zinc-800 font-semibold active:outline-none border-none flex items-center justify-center gap-x-2 rounded-sm hover:bg-zinc-400'>
+          <Link to={'create-post'} className='w-28 h-8 bg-zinc-300 text-zinc-800 font-semibold active:outline-none border-none flex items-center justify-center gap-x-2 rounded-md hover:bg-zinc-200 hover:text-zinc-700'>
             <PlusIcon size={20}/>
             <p>New post</p>
           </Link>
